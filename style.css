@@ -14,6 +14,17 @@
 html { scroll-behavior: smooth; }
 body { background: var(--bg-body); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
 
+/* Fix: Prevents menu from covering titles */
+section {
+    scroll-margin-top: 120px; 
+}
+
+@media (max-width: 768px) {
+    section {
+        scroll-margin-top: 90px;
+    }
+}
+
 .main-container { max-width: var(--container); margin: 0 auto; padding: 0 25px; }
 .section-padding { padding: 80px 0; }
 .bg-light { background: white; }
