@@ -769,104 +769,102 @@ body.dark-mode #userInput { background: #2d2d2d; color: white; border-color: #44
 }
 
 /* =========================================
-   VENTURE SUMMARY (Upgraded Card Look)
+   VENTURE SUMMARY (Compact & Dynamic)
    ========================================= */
 
 .venture-summary {
-    padding: 100px 20px;
-    background-color: #f3f4f6; /* Slightly darker gray to make the white card pop */
+    /* Dynamic Height: Tries to center itself in the viewport */
+    min-height: 90vh;          
+    display: flex;
+    align-items: center;       /* Centers the card vertically */
+    padding: 40px 20px;        /* Reduced outer padding */
+    background-color: #f3f4f6;
 }
 
-/* The "Pro Card" Container */
 .venture-card {
     max-width: 900px;
+    width: 100%;
     margin: 0 auto;
     background: #ffffff;
-    padding: 60px;
-    border-radius: 24px; /* Smooth, modern corners */
-    /* Soft, deep shadow to create "lift" */
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08); 
+    
+    /* 1. Tighter Internal Padding */
+    padding: 40px 50px;        /* Reduced from 60px */
+    
+    border-radius: 20px;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.08);
     border: 1px solid rgba(255, 255, 255, 0.5);
     position: relative;
     overflow: hidden;
 }
 
-/* Optional: A subtle top blue accent line */
+/* Gradient Strip at top */
 .venture-card::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 6px;
+    height: 5px;               /* Thinner line */
     background: linear-gradient(90deg, #2563eb, #60a5fa);
 }
 
-/* Award Badge - Top Left */
 .award-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 30px;
-    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;       /* Reduced from 30px */
 }
 
 .award-pill {
     background: #eff6ff;
     color: #2563eb;
-    font-size: 0.75rem;
+    font-size: 0.7rem;         /* Slightly smaller */
     font-weight: 700;
     text-transform: uppercase;
-    padding: 6px 12px;
+    padding: 5px 10px;
     border-radius: 50px;
     border: 1px solid #dbeafe;
-    letter-spacing: 0.5px;
-}
-
-.award-text {
-    font-size: 0.9rem;
-    color: #6b7280;
-    font-weight: 500;
 }
 
 .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 2.4rem;
+    /* Dynamic Font Size: Scales between 1.8rem and 2.4rem based on screen width */
+    font-size: clamp(1.8rem, 2.5vw, 2.4rem); 
     color: #111827;
-    margin-bottom: 30px;
-    line-height: 1.2;
+    margin-bottom: 20px;       /* Reduced from 30px */
+    line-height: 1.1;
 }
 
 .summary-body p {
-    font-size: 1.05rem;
-    line-height: 1.7;
+    font-size: 1rem;           /* Standard reading size */
+    line-height: 1.6;          /* Tighter line height (was 1.7) */
     color: #4b5563;
-    margin-bottom: 20px;
+    margin-bottom: 15px;       /* Reduced gap between paragraphs */
     max-width: 750px;
 }
 
 .lead-text {
-    color: #111827 !important; /* Darker for the first paragraph */
+    color: #111827 !important;
     font-weight: 500;
 }
 
-/* The Feature List (No more vertical line) */
+/* 2. Compact Feature List */
 .feature-grid {
-    margin: 40px 0;
+    margin: 25px 0;            /* Reduced from 40px */
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;                 /* Reduced gap between items */
 }
 
 .feature-item {
     display: flex;
     align-items: center;
-    gap: 15px;
-    background: #f9fafb; /* Very subtle background for items */
-    padding: 12px 20px;
-    border-radius: 12px;
+    gap: 12px;
+    background: #f9fafb;
+    padding: 10px 18px;        /* Slimmer boxes */
+    border-radius: 10px;
     border: 1px solid #f3f4f6;
-    transition: transform 0.2s;
+    transition: all 0.2s;
 }
 
 .feature-item:hover {
@@ -876,87 +874,108 @@ body.dark-mode #userInput { background: #2d2d2d; color: white; border-color: #44
 }
 
 .check-icon {
-    width: 24px;
-    height: 24px;
+    width: 20px;               /* Smaller icon */
+    height: 20px;
     background: #dbeafe;
     color: #2563eb;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     flex-shrink: 0;
 }
 
 .feature-item span {
     font-weight: 500;
     color: #374151;
+    font-size: 0.95rem;
 }
 
 .divider {
     border: 0;
     height: 1px;
     background: #e5e7eb;
-    margin: 40px 0;
+    margin: 25px 0;            /* Reduced from 40px */
 }
 
-/* Actions Area */
+/* Actions */
 .summary-actions {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 15px;
 }
 
 .platform-group {
     display: flex;
     align-items: center;
-    gap: 10px;
-}
-
-.platform-label {
-    color: #6b7280;
-    font-size: 0.95rem;
+    gap: 8px;
 }
 
 .link-brand {
     color: #2563eb;
     font-weight: 700;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
-.link-brand:hover {
-    text-decoration: underline;
-}
-
-/* The Strategy Button */
 .btn-strategy {
-    padding: 12px 28px;
-    background-color: #111827; /* Dark button */
+    padding: 10px 24px;        /* Slightly smaller button */
+    background-color: #111827;
     color: #fff;
     text-decoration: none;
     border-radius: 50px;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all 0.2s;
 }
 
 .btn-strategy:hover {
     background-color: #374151;
     transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .summary-footer {
-    margin-top: 30px;
-    font-size: 0.85rem;
+    margin-top: 20px;
+    font-size: 0.8rem;
     color: #9ca3af;
     text-align: center;
 }
 
-/* Mobile Tweak */
+/* =========================================
+   THE MAGIC FIX: "Laptop Mode"
+   If the screen height is less than 800px, compress everything.
+   ========================================= */
+@media (max-height: 800px) {
+    .venture-summary {
+        padding: 20px 10px; /* Minimal outer padding */
+    }
+    .venture-card {
+        padding: 25px 35px; /* Compact card */
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 12px;
+    }
+    .summary-body p {
+        font-size: 0.95rem;
+        margin-bottom: 10px;
+        line-height: 1.5;
+    }
+    .feature-grid, .divider {
+        margin: 15px 0;
+    }
+    .feature-item {
+        padding: 8px 15px;
+    }
+    .summary-footer {
+        display: none; /* Hide footer text on very small screens to save space */
+    }
+}
+
+/* Mobile Width Adjustment */
 @media (max-width: 768px) {
     .venture-card {
         padding: 30px 20px;
