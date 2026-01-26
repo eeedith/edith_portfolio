@@ -1,2 +1,2 @@
-# EdithWang
+# MeetEdith
 edith-portfolio

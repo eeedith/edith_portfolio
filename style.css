@@ -1,0 +1,538 @@
+/* --- 基础设置 --- */
+:root {
+    --bg-body: #FAFAFA;
+    --text-main: #1F2937;
+    --text-muted: #6B7280;
+    --text-accent: #2563EB; /* Tech Blue */
+    --gold: #D97706; /* Finance Gold */
+    --font-heading: 'Playfair Display', serif; /* 干净的高级字体 */
+    --font-body: 'Inter', sans-serif;
+    --container: 1150px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg-body); color: var(--text-main); font-family: var(--font-body); line-height: 1.6; }
+
+.main-container { max-width: var(--container); margin: 0 auto; padding: 0 25px; }
+.section-padding { padding: 80px 0; }
+.bg-light { background: white; }
+.bg-dark { background: #111827; }
+.text-white { color: white; }
+.text-center { text-align: center; }
+
+/* Navigation */
+nav { background: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid #eee; padding: 15px 0; }
+.nav-container { display: flex; justify-content: space-between; align-items: center; max-width: var(--container); margin: 0 auto; padding: 0 25px; }
+.logo { font-weight: 700; font-size: 1.1rem; letter-spacing: -0.5px; }
+.cpa-badge { background: black; color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 4px; margin-left: 6px; }
+.nav-links a { text-decoration: none; color: var(--text-muted); margin-left: 20px; font-size: 0.9rem; font-weight: 500; }
+.btn-nav { background: var(--text-main); color: white; border: none; padding: 8px 16px; border-radius: 20px; margin-left: 20px; cursor: pointer; font-size: 0.85rem; }
+
+/* Hero */
+.hero-section { padding: 40px 0 60px 0; display: flex; align-items: center; }
+.hero-grid { display: grid; grid-template-columns: 1.3fr 1fr; gap: 50px; align-items: center; }
+.status-pill { background: #EFF6FF; color: var(--text-accent); display: inline-block; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
+.dot { width: 8px; height: 8px; background: var(--text-accent); border-radius: 50%; display: inline-block; margin-right: 5px; }
+h1 { font-family: var(--font-heading); font-size: 3.5rem; line-height: 1.1; margin-bottom: 20px; }
+.accent-text { color: var(--text-accent); }
+.hero-bio { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 30px; max-width: 500px; }
+.hero-buttons { display: flex; gap: 15px; align-items: center; }
+.btn-primary { background: var(--text-accent); color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: 600; transition: background 0.2s; }
+.btn-primary:hover { background: #1D4ED8; }
+.btn-text { text-decoration: none; color: var(--text-main); font-weight: 600; }
+.hero-image-wrapper img { width: 100%; max-width: 400px; border-radius: 12px; box-shadow: 20px 20px 0 #E5E7EB; }
+
+/* Cert Bar */
+.cert-bar { background: #111827; padding: 20px 0; color: white; }
+.cert-list { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; }
+.cert-title { font-size: 0.85rem; text-transform: uppercase; color: #9CA3AF; margin-right: 15px; display: block; width: 100%; margin-bottom: 10px; }
+.cert-tag { background: rgba(255,255,255,0.1); padding: 5px 12px; border-radius: 4px; font-size: 0.9rem; display: flex; align-items: center; gap: 8px; }
+.highlight-cert { border: 1px solid var(--text-accent); color: #93C5FD; }
+.cert-tag.fade { opacity: 0.6; font-style: italic; }
+
+/* Focus / AskTaxly */
+.section-header { margin-bottom: 50px; }
+.section-header h3 { font-size: 2rem; font-family: var(--font-heading); margin-bottom: 10px; }
+.focus-card { background: #EFF6FF; border: 1px solid #BFDBFE; border-radius: 12px; padding: 40px; display: flex; align-items: center; gap: 40px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); }
+.focus-content { flex: 2; }
+.focus-visual { flex: 1; text-align: center; }
+.project-tag-large { background: var(--text-accent); color: white; display: inline-block; padding: 4px 12px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; margin-bottom: 15px; }
+.focus-content h4 { font-size: 1.5rem; margin-bottom: 15px; }
+.focus-highlights { margin-top: 20px; list-style: none; }
+.focus-highlights li { margin-bottom: 8px; font-size: 0.95rem; }
+.icon-huge { font-size: 5rem; color: #93C5FD; }
+
+/* Consulting */
+.consulting-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+.consulting-card { background: white; border: 1px solid #E5E7EB; padding: 30px; border-radius: 12px; transition: transform 0.2s; }
+.consulting-card:hover { transform: translateY(-5px); border-color: var(--text-main); }
+.card-top { display: flex; justify-content: space-between; margin-bottom: 15px; }
+.icon-red { font-size: 2rem; color: #DC2626; }
+.icon-blue { font-size: 2rem; color: #2563EB; }
+.role-badge { font-size: 0.75rem; background: #F3F4F6; padding: 4px 8px; border-radius: 4px; font-weight: 600; color: var(--text-muted); }
+.subtitle { font-weight: 600; color: var(--text-main); margin-bottom: 10px; }
+.details { font-size: 0.9rem; color: var(--text-muted); }
+
+/* Timeline (Rich) */
+.timeline-wrapper { max-width: 850px; margin: 0 auto; }
+.timeline-row { display: grid; grid-template-columns: 130px 1fr; gap: 30px; margin-bottom: 40px; }
+.timeline-time { text-align: right; border-right: 2px solid #E5E7EB; padding-right: 30px; }
+.year { font-weight: 700; display: block; }
+.tags-row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+.tag { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; padding: 3px 8px; border-radius: 4px; }
+.tag-fintech { background: #DBEAFE; color: #1E40AF; }
+.tag-ent { background: #D1FAE5; color: #065F46; }
+.tag-vol { background: #EDE9FE; color: #5B21B6; }
+.tag-strategy { background: #FEF3C7; color: #92400E; }
+.tag-corp { background: #F3F4F6; color: #4B5563; }
+.timeline-content h4 { font-size: 1.1rem; margin-bottom: 5px; }
+.company { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; font-style: italic; }
+
+/* Insights Grid */
+.insights-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.insight-card { background: var(--bg-body); border: 1px solid #E5E7EB; border-radius: 8px; padding: 30px; text-decoration: none; color: inherit; transition: transform 0.2s; }
+.insight-card:hover { transform: translateY(-5px); border-color: var(--text-accent); }
+.card-icon { font-size: 1.5rem; color: var(--text-accent); margin-bottom: 15px; }
+.insight-card h5 { font-size: 1.1rem; margin-bottom: 10px; color: var(--text-main); }
+.insight-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px; }
+.read-link { font-size: 0.85rem; font-weight: 600; color: var(--text-accent); }
+
+/* Connect Buttons */
+.connect-title { font-family: var(--font-heading); font-size: 2.5rem; margin-bottom: 15px; }
+.connect-text { color: #9CA3AF; max-width: 600px; margin: 0 auto 40px; font-size: 1.1rem; }
+.connect-actions { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.btn-calendly { background: var(--text-accent); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: transform 0.2s; }
+.btn-calendly:hover { transform: scale(1.05); }
+.btn-linkedin-large { background: transparent; border: 2px solid white; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 10px; transition: background 0.2s; }
+.btn-linkedin-large:hover { background: white; color: #111827; }
+
+/* Footer */
+footer { text-align: center; padding: 40px 0; color: var(--text-muted); font-size: 0.9rem; border-top: 1px solid #E5E7EB; }
+
+/* AI CHATBOT */
+.floating-ai {
+    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+    background: var(--text-main); color: white; border-radius: 50%;
+    display: flex; justify-content: center; align-items: center; font-size: 1.5rem;
+    cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.2s; z-index: 9999;
+}
+.floating-ai:hover { transform: scale(1.1); background: var(--text-accent); }
+.tooltip { position: absolute; right: 70px; background: white; color: var(--text-main); padding: 5px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 600; opacity: 0; transition: opacity 0.3s; pointer-events: none; white-space: nowrap; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+.floating-ai:hover .tooltip { opacity: 1; }
+
+.chat-window {
+    display: none; position: fixed; bottom: 100px; right: 30px; width: 350px; height: 450px;
+    background: white; border-radius: 12px; box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    z-index: 9998; flex-direction: column; border: 1px solid #eee; overflow: hidden;
+}
+.chat-window.open { display: flex; }
+.chat-header { background: var(--text-main); color: white; padding: 15px; display: flex; justify-content: space-between; align-items: center; }
+.close-chat { background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
+.chat-body { flex: 1; padding: 15px; overflow-y: auto; background: #f9f9f9; display: flex; flex-direction: column; gap: 10px; }
+.message { max-width: 80%; padding: 10px 15px; border-radius: 12px; font-size: 0.9rem; line-height: 1.4; }
+.bot-message { background: #E5E7EB; color: black; align-self: flex-start; border-bottom-left-radius: 2px; }
+.user-message { background: var(--text-accent); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+.chat-input-area { padding: 15px; border-top: 1px solid #eee; background: white; }
+.quick-replies { display: flex; gap: 10px; flex-wrap: wrap; }
+.quick-replies button { background: white; border: 1px solid var(--text-accent); color: var(--text-accent); padding: 6px 12px; border-radius: 20px; cursor: pointer; font-size: 0.8rem; transition: all 0.2s; }
+.quick-replies button:hover { background: var(--text-accent); color: white; }
+
+/* Reveal Animation */
+.reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero-grid, .consulting-grid, .focus-card, .timeline-row { grid-template-columns: 1fr; }
+    .hero-image-wrapper { order: -1; margin-bottom: 20px; }
+    .focus-visual { display: none; }
+    .timeline-time { text-align: left; border-right: none; border-left: 2px solid #eee; padding-left: 20px; }
+    .chat-window { width: 90%; right: 5%; }
+}
+/* --- Proven Impact Section (Updated for 4 items) --- */
+.impact-grid {
+    display: grid;
+    /* 改为自适应布局：一行放不下会自动换行，通常一行显示4个，平板显示2个 */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+    gap: 40px;
+    text-align: center;
+    border-top: 1px solid #E5E7EB;
+    padding-top: 60px;
+}
+
+.impact-item {
+    padding: 10px;
+    cursor: default;
+    position: relative;
+}
+
+.impact-number {
+    font-family: var(--font-heading);
+    font-size: 3.5rem; /* 大字体 */
+    color: var(--text-accent);
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.impact-label {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 10px;
+}
+
+/* 悬停显示细节 - 保持不变 */
+.impact-details {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+    max-width: 240px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+.impact-item:hover .impact-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.impact-item:hover .impact-number {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr; /* 手机上一列 */
+        gap: 50px;
+    }
+    .impact-details {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* 悬停效果逻辑 */
+.impact-details {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    opacity: 0;             /* 默认隐藏 */
+    transform: translateY(10px);
+    transition: all 0.3s ease-in-out;
+    max-width: 250px;       /* 限制文字宽度，阅读体验更好 */
+    margin: 0 auto;
+}
+
+/* 鼠标放上去时显示细节 */
+.impact-item:hover .impact-details {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 鼠标放上去时数字稍微上浮一点点 */
+.impact-item:hover .impact-number {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+
+/* 手机端适配：变成单列 */
+@media (max-width: 768px) {
+    .impact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    /* 手机上默认显示细节，因为没有鼠标悬停 */
+    .impact-details {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- View All Insights Button --- */
+.view-all-wrapper {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.btn-outline {
+    display: inline-block;
+    border: 2px solid var(--text-main);
+    color: var(--text-main);
+    padding: 12px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+    background: var(--text-main);
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* --- Force 3 Cards in One Row --- */
+.consulting-grid {
+    display: grid;
+    /* 核心代码：强制分成三列，每列占 1 份宽度 */
+    grid-template-columns: 1fr 1fr 1fr; 
+    gap: 25px; /* 卡片之间的间距 */
+    margin-top: 40px;
+}
+
+/* 手机端适配：如果不加这个，手机上看会挤成一团，所以手机上还是让它变竖排 */
+@media (max-width: 900px) {
+    .consulting-grid {
+        grid-template-columns: 1fr; /* 手机上改回一列 */
+    }
+}
+
+
+/* --- Consulting Card Hover Reveal Effect --- */
+
+/* 1. 让卡片本身的高度变化更丝滑 */
+.consulting-card {
+    transition: all 0.3s ease-in-out;
+    /* 确保卡片内容不会溢出边界 */
+    overflow: hidden; 
+}
+
+/* 2. 默认状态下，隐藏详情文字 */
+.consulting-card .details {
+    max-height: 0;      /* 高度压扁为 0 */
+    opacity: 0;         /* 透明度为 0 (完全看不见) */
+    overflow: hidden;   /* 隐藏超出的内容 */
+    margin-top: 0;      /* 去掉上边距，彻底不占空间 */
+    /* 添加过渡动画，让展开过程很顺滑 */
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+}
+
+/* 3. 鼠标悬停状态下 (Hover)，展示详情文字 */
+.consulting-card:hover .details {
+    max-height: 300px;  /* 设置一个足够大的最大高度，让文字能完全显示 */
+    opacity: 1;         /* 变回不透明 */
+    margin-top: 15px;   /* 恢复上边距，让文字和标题有点距离 */
+}
+
+/* (可选) 鼠标放上去时，让卡片的背景色稍微变一点点，增加交互感 */
+.consulting-card:hover {
+    background-color: #fafafa; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08); /* 阴影加深一点，更有浮起来的感觉 */
+}
+
+
+/* --- Dark Mode Styles --- */
+body.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode nav {
+    background-color: #121212;
+    box-shadow: 0 2px 10px rgba(255,255,255,0.05);
+}
+body.dark-mode .nav-item {
+    color: #e0e0e0;
+}
+body.dark-mode .nav-item:hover {
+    color: #64ffda;
+}
+body.dark-mode .consulting-card {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+body.dark-mode .consulting-card h4 {
+    color: #ffffff;
+}
+body.dark-mode .consulting-card .subtitle {
+    color: #a0a0a0;
+}
+body.dark-mode .consulting-card .details {
+    color: #cccccc;
+}
+/* 强制覆盖浅色背景 */
+body.dark-mode .bg-light {
+    background-color: #181818 !important;
+}
+
+/* --- Dark Mode Fix for Focus/Venture Section --- */
+
+/* 1. 将那个大卡片的背景变深 */
+body.dark-mode .focus-card {
+    background-color: #1e1e1e !important;  /* 深灰色背景 */
+    border: 1px solid #333;               /* 微弱边框 */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.5); /* 加深阴影 */
+}
+
+/* 2. 让卡片里的标题和文字变亮 */
+body.dark-mode .focus-card h4,
+body.dark-mode .focus-card p,
+body.dark-mode .focus-card li {
+    color: #e0e0e0 !important; /* 亮灰色文字 */
+}
+
+/* 3. 让 "The Challenge" 这种加粗字变白 */
+body.dark-mode .focus-card strong {
+    color: #ffffff !important;
+}
+
+/* 4. 如果那是浅蓝色背景的 tag (Founder & Product Lead)，保持文字清晰 */
+body.dark-mode .project-tag-large {
+    border: 1px solid #64ffda; /* 加个高亮边框让它在黑夜里更明显 */
+}
+
+/* =========================================
+   🔧 强制修复：Chatbot 样式 (对齐 index.html)
+   ========================================= */
+
+/* 1. 悬浮按钮 (名字必须是 .floating-ai) */
+.floating-ai {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background: #2563eb; /* 蓝色 */
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    transition: transform 0.3s ease;
+    z-index: 9999; /* 保证在最上层 */
+}
+
+.floating-ai:hover {
+    transform: scale(1.1);
+}
+
+.tooltip {
+    display: none; /* 简化：暂时隐藏 tooltip 避免干扰 */
+}
+
+/* 2. 聊天窗口 (名字必须是 .chat-window) */
+.chat-window {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 340px;
+    height: 480px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 9999;
+    
+    /* 核心动画逻辑 */
+    transform: scale(0); /* 默认缩小隐藏 */
+    transform-origin: bottom right; /* 从右下角弹出 */
+    transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    opacity: 0;
+    pointer-events: none; /* 隐藏时不可点击 */
+}
+
+/* 3. 激活状态 (JS 切换这个类来显示窗口) */
+.chat-window.active {
+    transform: scale(1); /* 放大显示 */
+    opacity: 1;
+    pointer-events: all;
+}
+
+/* --- 窗口内部样式 --- */
+.chat-header {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    background: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 消息气泡 */
+.message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+.bot-message {
+    background: white;
+    border: 1px solid #e5e7eb;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+.user-message {
+    background: #2563eb;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+/* 底部输入区 */
+.chat-input-area {
+    padding: 10px;
+    background: white;
+    border-top: 1px solid #eee;
+}
+
+.quick-replies {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+}
+
+.quick-replies button {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1d4ed8;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 11px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s;
+}
+
+.quick-replies button:hover {
+    background: #2563eb;
+    color: white;
+}
+
+/* Dark Mode 适配 */
+body.dark-mode .chat-window { background: #1e1e1e; border: 1px solid #444; }
+body.dark-mode .chat-body { background: #121212; }
+body.dark-mode .bot-message { background: #2d2d2d; border-color: #444; color: #e0e0e0; }
+body.dark-mode .chat-input-area { background: #1e1e1e; border-top-color: #333; }
+body.dark-mode #userInput { background: #2d2d2d; color: white; border-color: #444; }
