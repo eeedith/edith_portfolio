@@ -457,7 +457,7 @@
 </div>
 
 <script>
-    // --- 1. REVEAL ANIMATION (保留这个以防白屏) ---
+    // --- 1. REVEAL ANIMATION ---
     window.addEventListener('scroll', reveal);
     function reveal(){
         var reveals = document.querySelectorAll('.reveal');
@@ -470,7 +470,7 @@
             }
         }
     }
-    reveal(); // Trigger on load
+    reveal();
 
     // --- 2. DARK MODE LOGIC ---
     function toggleTheme() {
@@ -489,9 +489,39 @@
     }
 
     // --- 3. CHATBOT LOGIC ---
+
+    // ✅ FIXED: Greeting Logic added inside toggleChat
     function toggleChat() {
-        document.getElementById('chatWindow').classList.toggle('active');
+        const chatWindow = document.getElementById('chatWindow');
+        const chatBody = document.getElementById('chatBody');
+        
+        chatWindow.classList.toggle('active');
+
+        // If opening AND chat is empty, say hello
+        if (chatWindow.classList.contains('active') && chatBody.innerHTML.trim() === "") {
+            addMessage("Hi, I’m Edith’s AI concierge. You can ask about experience, applied projects, or the AI venture.", 'bot-message');
+        }
     }
+
+    // ✅ FIXED: Make Quick Reply Buttons Work
+    document.getElementById('quickReplies').addEventListener('click', (e) => {
+        // Handle click on button or icon inside button
+        const btn = e.target.closest('button'); 
+        if (!btn) return;
+        
+        // Map topics to text
+        const topic = btn.getAttribute('data-topic');
+        const topicMap = {
+            'experience': "Tell me about your experience.",
+            'projects': "What projects have you worked on?",
+            'skills': "What are your technical skills?",
+            'venture': "Tell me about your AI venture.",
+            'contact': "How can I contact you?"
+        };
+        
+        const text = topicMap[topic] || btn.innerText;
+        handleInput(text);
+    });
 
     function checkEnter(event) {
         if (event.key === "Enter") sendUserMessage();
@@ -525,36 +555,36 @@
         chatBody.scrollTop = chatBody.scrollHeight;
     }
 
-    // --- 🧠 机器人的大脑 (更新版) ---
+    // --- 🧠 机器人的大脑 (Updated Logic) ---
     function getSmartResponse(input) {
         const text = input.toLowerCase();
         
-        // 隐形逻辑 (Mayo) - 用户不问不说
+        // Hidden Logic (Mayo)
         if (text.includes('mayo') || text.includes('hospital') || text.includes('tote')) {
             return "At <b>Mayo Clinic</b>, I led a root cause analysis on a 40-50% tote underutilization issue. I optimized workflows to reduce transportation waste."; 
         }
             
-        // 隐形逻辑 (Ecolab) - 用户不问不说
+        // Hidden Logic (Ecolab)
         if (text.includes('ecolab') || text.includes('margin') || text.includes('flat fee')) {
             return "At <b>Ecolab</b>, I evaluated 'Flat Fee' billing arrangements. My models identified margin growth opportunities and improved cash collection visibility.";
         }
 
-        // 隐形逻辑 (Venture)
+        // Venture
         if (text.includes('tax') || text.includes('venture') || text.includes('ai agent')) {
             return "I am the founder of <b>AskTaxly AI</b>. We use Python & LLMs to automate complex cross-border tax compliance.";
         }
 
-        // 核心回复: 经验
+        // Experience
         if (text.includes('experience') || text.includes('background') || text.includes('work')) {
             return "I have 10+ years in Finance Transformation. I've led projects in Healthcare and Commercial sectors, and currently work in Governance at Citi.";
         }
 
-        // 核心回复: 技能
+        // Skills
         if (text.includes('skill') || text.includes('tech')) {
             return "I bridge Finance and Tech. My toolkit includes <b>Python</b> (for automation), <b>Power BI</b>, and <b>Azure</b> cloud infrastructure.";
         }
 
-        // 4. 新的笑话库 (更有趣，非会计类)
+        // Jokes
         if (text.includes('joke') || text.includes('fun')) {
             const jokes = [
                 "Why did the scarecrow win an award? Because he was outstanding in his field! 🌾",
@@ -565,12 +595,12 @@
             return jokes[Math.floor(Math.random() * jokes.length)];
         }
 
-        // 联系方式
+        // Contact
         if (text.includes('contact') || text.includes('email') || text.includes('chat')) {
             return "We can definitely chat! You can find my LinkedIn at the top, or schedule a coffee chat via Calendly.";
         }
 
-        // 3. 通用兜底回复 (不再提具体项目)
+        // Fallback
         return "That's interesting! You can ask me about my <b>Experience</b>, my <b>Tech Skills</b>, or I can tell you a <b>Joke</b> to brighten your day! 😄";
     }
 </script>
