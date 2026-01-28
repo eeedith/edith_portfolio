@@ -220,25 +220,8 @@ nav { background: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 100
 .tag-ent { background: #D1FAE5; color: #065F46; }
 .tag-vol { background: #EDE9FE; color: #5B21B6; }
 .tag-strategy { background: #e0e7ff; color: #92400E; }
-/* --- 1. Controllership Tags (Cool Slate - Modern Corporate) --- */
-.tag-corp { 
-    background: #f1f5f9;       /* Light Blue-Grey Background */
-    color: #334155;            /* Dark Slate Text */
-    border: 1px solid #cbd5e1; /* Subtle Steel Border */
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 4px;        /* Standard square edges */
-}
-
-/* --- 2. Early Career Tags (Neutral Charcoal - The Foundation) --- */
-.tag-foundation {
-    background: #e5e7eb;       /* Neutral Grey Background */
-    color: #1f2937;            /* Dark Charcoal Text */
-    border: 1px solid #d1d5db; /* Grey Border */
-    font-weight: 600;
-    padding: 4px 12px;
-    border-radius: 4px;
-}
+.tag-corp { background: #f1f5f9; color: #334155; }
+.tag-foundation { background: #e5e7eb;color: #1f2937; }
 .timeline-content h4 { font-size: 1.1rem; margin-bottom: 5px; }
 .company { color: var(--text-muted); font-size: 0.9rem; margin-bottom: 10px; font-style: italic; }
 
