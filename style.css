@@ -584,3 +584,28 @@ body.dark-mode .insight-card p {
     transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
 }
+
+
+/* --- Navigation CTA Button (Let's Connect) --- */
+.nav-cta-btn {
+    background-color: #2563eb;    /* Vibrant Royal Blue */
+    color: #ffffff !important;    /* Force text white */
+    padding: 8px 24px;            /* Comfortable padding */
+    border-radius: 50px;          /* Pill shape */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-left: 20px;            /* Spacing from "Insights" link */
+    margin-right: 15px;           /* Spacing from Dark Mode toggle */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2); /* Subtle blue shadow */
+    border: 1px solid transparent;
+}
+
+/* Hover Effect */
+.nav-cta-btn:hover {
+    background-color: #1d4ed8;    /* Slightly darker blue */
+    transform: translateY(-2px);  /* Lifts up slightly */
+    box-shadow: 0 6px 15px rgba(37, 99, 235, 0.4); /* Stronger glow */
+    color: #ffffff;
+}
