@@ -529,7 +529,7 @@ body.dark-mode .insight-card p {
     text-align: center;
 }
 
-/* --- Refined Credentials Footer (Platinum/Silver Style) --- */
+/* --- Refined Credentials Footer (Golden Authority) --- */
 .credentials-footer {
     margin-top: 60px;
     padding-top: 30px;
@@ -545,7 +545,7 @@ body.dark-mode .insight-card p {
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #64748b;                /* Muted Slate Grey */
+    color: #94a3b8;                /* Label remains muted grey to let pills shine */
     font-weight: 700;
     margin-bottom: 5px;
 }
@@ -559,9 +559,15 @@ body.dark-mode .insight-card p {
 
 .cred-pill {
     font-size: 0.9rem;
-    color: #f1f5f9;                /* Off-White Text */
-    background: rgba(255, 255, 255, 0.05); /* Very subtle glass fill */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Thin Silver Border */
+    /* NEW: Soft Gold Text (Readable & Premium) */
+    color: #fde68a;                
+    
+    /* NEW: Very subtle warm background */
+    background: rgba(251, 191, 36, 0.05); 
+    
+    /* NEW: Gold Border */
+    border: 1px solid rgba(251, 191, 36, 0.3); 
+    
     padding: 8px 18px;
     border-radius: 50px;
     display: flex;
@@ -572,21 +578,17 @@ body.dark-mode .insight-card p {
     transition: all 0.3s ease;
 }
 
-/* Icon Styling - NOW SILVER (No Blue) */
+/* Icon Styling - Bright Gold */
 .cred-pill i {
-    color: #cbd5e1;                /* Light Silver Icon */
+    color: #fbbf24;                /* Vibrant Amber/Gold */
     font-size: 0.95rem;
 }
 
-/* Hover Effect - Brighten to White */
+/* Hover Effect - Glows Brighter */
 .cred-pill:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: #ffffff;
-    color: #ffffff;
+    background: rgba(251, 191, 36, 0.15); /* Brighter background */
+    border-color: #fcd34d;         /* Brighter border */
+    color: #fffbeb;                /* Text turns almost white/cream */
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.cred-pill:hover i {
-    color: #ffffff; /* Icon turns white on hover */
+    box-shadow: 0 4px 12px rgba(251, 191, 36, 0.1); /* Subtle gold glow */
 }
