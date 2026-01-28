@@ -597,8 +597,8 @@ body.dark-mode .insight-card p {
     border-radius: 50px;
     
     /* POSITIONING: The "Force Right" Trick */
-    margin-left: 60px !important; /* Shoves button to the far right */
-    margin-right: 15px !important; /* Gap between button and Moon icon */
+    margin-left: AUTO !important; /* Shoves button to the far right */
+    margin-right: AUTO !important; /* Gap between button and Moon icon */
     
     /* Structure */
     display: inline-flex;         /* Ensures padding works perfectly */
